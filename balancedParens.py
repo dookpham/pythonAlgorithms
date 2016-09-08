@@ -1,20 +1,11 @@
 import re
+import unittest
 
 def balancedParens(string):
   parensOpen = 0;
   curlyOpen = 0;
   brackOpen = 0;
   strippedString = re.sub(r"([^(){}[\]])", "", string)
-  # return True
-
-  # counter = {
-  #   '(': 0,
-  #   '{': 0,
-  #   '[': 0,
-  #   ')': '(',
-  #   '}': '{',
-  #   ']': '['
-  # }
 
   openChars = {
     '(': True,
@@ -44,18 +35,15 @@ def balancedParens(string):
   else: 
     return True
 
-  # for x in range (len(strippedString)):
-  #   char = strippedString[x]
-  #   if (char == '(' or char == '{' or char == '['):
-  #     counter[char] += 1
-  #   elif (char == ')' or char == '}' or char == ']'):
-  #     openChar = counter[char]
-  #     if (counter[openChar] <= 0):
-  #       return False
-  #     counter[openChar] -= 1
-  
-  # if (counter['('] != 0 or counter['{'] != 0 or counter['['] != 0):
-  #   return False
-  # return True
-
 print(balancedParens('([{}])'));
+
+class SomeTests(unittest.TestCase):
+  def test_upper(self):
+    self.assertEqual('dude'.upper(), 'DUDE')
+
+  def test_isupper(self):
+    self.assertTrue('DUDE'.isupper())
+    self.assertFalse('DudE'.isupper())
+
+suite = unittest.TestLoader().loadTestsFromTestCase(SomeTests)
+unittest.TextTestRunner(verbosity=2).run(suite)
