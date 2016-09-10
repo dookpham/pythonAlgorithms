@@ -1,5 +1,4 @@
 import re
-import unittest
 
 def balancedParens(string):
   parensOpen = 0;
@@ -35,15 +34,4 @@ def balancedParens(string):
   else: 
     return True
 
-print(balancedParens('([{}])'));
 
-class SomeTests(unittest.TestCase):
-  def test_upper(self):
-    self.assertEqual('dude'.upper(), 'DUDE')
-
-  def test_isupper(self):
-    self.assertTrue('DUDE'.isupper())
-    self.assertFalse('DudE'.isupper())
-
-suite = unittest.TestLoader().loadTestsFromTestCase(SomeTests)
-unittest.TextTestRunner(verbosity=2).run(suite)
