@@ -1,0 +1,1 @@
+python -m unittest spec.arrays.test_every

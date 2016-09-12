@@ -1,9 +1,9 @@
 import unittest
 from balancedParens import balancedParens
 
-class SomeTests(unittest.TestCase):
+class AllTests(unittest.TestCase):
   def test_balancedParens(self):
-    self.assertTrue(balancedParens('([{}])'))
+    self.assertTrue(balancedParens('([{}])'), 'error message here')
     self.assertFalse(balancedParens('({[}])'))
 
   def test_upper(self):
@@ -13,5 +13,8 @@ class SomeTests(unittest.TestCase):
     self.assertTrue('DUDE'.isupper())
     self.assertFalse('DudE'.isupper())
 
-suite = unittest.TestLoader().loadTestsFromTestCase(SomeTests)
+suite = unittest.TestLoader().loadTestsFromTestCase(AllTests)
+# def suite():
+  # suite = unittest.TestSuite
+
 unittest.TextTestRunner(verbosity=2).run(suite)
