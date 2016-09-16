@@ -5,7 +5,7 @@ from src.arrays import *
 #helpers
 
 
-class TestArrays(unittest.TestCase):
+class TestEvery(unittest.TestCase):
   
   #every
   def test_1(self):
@@ -15,6 +15,8 @@ class TestArrays(unittest.TestCase):
   def test_2(self):
     print('Check every value in array does not equal 7')
     self.assertFalse(every([5,5,6,7], lambda val: val == 7 ), 'error message here')
+
+class TestSome(unittest.TestCase):
 
   #some
   def test_some1(self):
@@ -26,5 +28,8 @@ class TestArrays(unittest.TestCase):
     self.assertFalse(some([5,5,6,8], lambda val: val == 7 ), 'error message here')
 
 
-suite = unittest.TestLoader().loadTestsFromTestCase(TestArrays)
-unittest.TextTestRunner(verbosity=2).run(suite)
+
+# suite = unittest.TestLoader().loadTestsFromTestCase(TestEvery, TestSome)
+# unittest.TextTestRunner(verbosity=2).run(suite)
+if __name__ == '__main__':
+  unittest.main()
