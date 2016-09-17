@@ -27,6 +27,9 @@ class TestSome(unittest.TestCase):
     print('Check some value in array does not equal 7')
     self.assertFalse(some([5,5,6,8], lambda val: val == 7 ), 'error message here')
 
+class TestRemoveDuplicates(unittest.TestCase):
+  def test_1(self):
+    self.assertEquals(removeDuplicates([1,2,3,2,2,1]), [1,2,3], 'did not remove duplicates')
 
 
 # suite = unittest.TestLoader().loadTestsFromTestCase(TestEvery, TestSome)
